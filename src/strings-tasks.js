@@ -20,10 +20,10 @@
  *   getStringLength(undefined) => 0
  */
 function getStringLength(value) {
-  if (value === null || value === undefined){
+  if (value === null || value === undefined) {
     return 0;
   }
-  return value.length();
+  return value.length;
 }
 
 /**
@@ -41,10 +41,7 @@ function getStringLength(value) {
  *   isString(new String('test')) => true
  */
 function isString(value) {
-  if (typeof(value) === String){
-    return true
-  };
-  return false;
+  return value instanceof String;
 }
 
 /**
@@ -59,8 +56,8 @@ function isString(value) {
  *   concatenateStrings('aa', '') => 'aa'.
  *   concatenateStrings('', 'bb') => 'bb'
  */
-function concatenateStrings(/* value1, value2 */) {
-  throw new Error('Not implemented');
+function concatenateStrings(value1, value2) {
+  return value1 + value2;
 }
 
 /**
@@ -74,8 +71,11 @@ function concatenateStrings(/* value1, value2 */) {
  *   getFirstChar('cat') => 'c'
  *   getFirstChar('') => ''
  */
-function getFirstChar(/* value */) {
-  throw new Error('Not implemented');
+function getFirstChar(value) {
+  if (value.length === 0) {
+    return 0;
+  }
+  return value[0];
 }
 
 /**
@@ -89,8 +89,8 @@ function getFirstChar(/* value */) {
  *   removeLeadingAndTrailingWhitespaces('cat ') => 'cat'
  *   removeLeadingAndTrailingWhitespaces('\t\t\tHello, World! ') => 'Hello, World!'
  */
-function removeLeadingAndTrailingWhitespaces(/* value */) {
-  throw new Error('Not implemented');
+function removeLeadingAndTrailingWhitespaces(value) {
+  return value.trim();
 }
 
 /**
